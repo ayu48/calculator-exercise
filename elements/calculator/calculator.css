@@ -1,0 +1,46 @@
+:host {
+    display: block;
+    background-color: #272F35;
+    position: relative;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    width: 425px;
+    height: 585px;
+}
+
+.row {
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#output {
+    display: block;
+    background-color: #E9FAFC;
+    text-align: right;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 48px;
+    height: 70px;
+    margin: 5px;
+}
+
+button {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    border: none;
+    background: #EDAB00;
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    width: 100px;
+    height: 100px;
+}
+
+button.double {
+    width: 205px;
+    height: 80px;
+}
