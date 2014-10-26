@@ -1,6 +1,7 @@
 Polymer('calculator-element', {
 
     decimalAdded: false,
+    done: false,
     operator: null,
     value1: 0,
     value2: 0,
@@ -14,7 +15,8 @@ Polymer('calculator-element', {
         var value = event.currentTarget.value;
         var currentInput = this.getOutput();
 
-        if (currentInput == 0 || this.isOperator(currentInput)) {
+        //reset input if 0, the current output is an operator, or output is result of prev equation
+        if (currentInput == 0 || this.isOperator(currentInput) || this.done) {
             this.updateOutput(value);
         } else if (value == 'decimal' && !this.decimalAdded) {
             this.updateOutput(currentInput + '.');
@@ -22,6 +24,8 @@ Polymer('calculator-element', {
         } else if (value !== "decimal") {
             this.updateOutput(currentInput + value);
         }
+
+        this.done = false;
     },
 
     operatorClick: function(event) {
@@ -50,6 +54,7 @@ Polymer('calculator-element', {
         var result = this.calculate(this.value1, this.value2, this.operator);
         this.emptyValues();
         this.updateOutput(result);
+        this.done = true;
     },
 
     calculate: function(value1, value2, operator) {
