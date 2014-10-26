@@ -44,3 +44,7 @@ button.double {
     width: 205px;
     height: 80px;
 }
+
+button:hover {
+    background: #3D93C2;
+}
