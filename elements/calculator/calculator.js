@@ -14,7 +14,7 @@ Polymer('calculator-element', {
         var value = event.currentTarget.value;
         var currentInput = this.getOutput();
 
-        if (currentInput == 0) {
+        if (currentInput == 0 || this.isOperator(currentInput)) {
             this.updateOutput(value);
         } else if (value == 'decimal' && !this.decimalAdded) {
             this.updateOutput(currentInput + '.');
@@ -40,7 +40,7 @@ Polymer('calculator-element', {
         if (this.operator == 'square-root') {
             this.calculate();
         } else {
-            this.emptyOutput();
+            this.updateOutput(this.operator);
         }
 
     },
@@ -84,5 +84,9 @@ Polymer('calculator-element', {
 
     getOutput: function() {
         return this.$.output.innerHTML;
+    },
+
+    isOperator: function(string) {
+        return string == '+' || string == '-' || string == '/' || string == 'x';
     }
 });
