@@ -16,29 +16,29 @@
             <button value=7 on-click="{{numberClick}}">7</button>
             <button value=8 on-click="{{numberClick}}">8</button>
             <button value=9 on-click="{{numberClick}}">9</button>
-            <button on-click="{{divide}}">/</button>
+            <button value="/" on-click="{{operatorClick}}">/</button>
         </div>
         <div class="row">
             <button value=4 on-click="{{numberClick}}">4</button>
             <button value=5 on-click="{{numberClick}}">5</button>
             <button value=6 on-click="{{numberClick}}">6</button>
-            <button on-click="{{multiply}}">x</button>
+            <button value="x" on-click="{{operatorClick}}">x</button>
         </div>
         <div class="row">
             <button value=1 on-click="{{numberClick}}">1</button>
             <button value=2 on-click="{{numberClick}}">2</button>
             <button value=3 on-click="{{numberClick}}">3</button>
-            <button on-click="{{subtract}}">-</button>
+            <button value="-" on-click="{{operatorClick}}">-</button>
         </div>
         <div class="row">
             <button value=0 on-click="{{numberClick}}">0</button>
             <button value="decimal" on-click="{{numberClick}}">.</button>
-            <button value="root" on-click="{{root}}">root</button>
-            <button on-click="{{add}}">+</button>
+            <button value="square-root" on-click="{{operatorClick}}">√</button>
+            <button value="+" on-click="{{operatorClick}}">+</button>
         </div>
         <div class="row">
             <button class="double" on-click="{{clear}}">clear</button>
-            <button class="double" on-click="{{calculate}}">=</button>
+            <button class="double" on-click="{{showResult}}">=</button>
         </div>
     </template>
     <script src="calculator.js"></script>
