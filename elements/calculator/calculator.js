@@ -11,7 +11,7 @@ Polymer({
 
     numberClick: function(event) {
         var value = event.currentTarget.value;
-        var currentInput = this.$.output.innerHTML;
+        var currentInput = this.getOutput();
 
         if (currentInput == 0) {
             this.updateOutput(value);
@@ -27,9 +27,9 @@ Polymer({
         // if more than one calculations are done before equal is pressed
         // calculate what you have so far
         if (this.value1 && this.operator) {
-            this.value1 = this.calculate(this.value1, parseFloat(this.$.output.innerHTML), this.operator);
+            this.value1 = this.calculate(this.value1, parseFloat(this.getOutput()), this.operator);
         } else {
-            this.value1 = parseFloat(this.$.output.innerHTML);
+            this.value1 = parseFloat(this.getOutput());
         }
 
         this.operator = event.currentTarget.value;
@@ -44,7 +44,7 @@ Polymer({
     },
 
     showResult: function() {
-        this.value2 = parseFloat(this.$.output.innerHTML);
+        this.value2 = parseFloat(this.getOutput());
         var result = this.calculate(this.value1, this.value2, this.operator);
         this.emptyValues();
         this.updateOutput(result);
@@ -78,5 +78,9 @@ Polymer({
 
     updateOutput: function(value) {
         this.$.output.innerHTML = value;
+    },
+
+    getOutput: function() {
+        return this.$.output.innerHTML;
     }
 });
