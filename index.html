@@ -12,16 +12,18 @@
     </body>
 
     <script>
-        var themeButton = document.querySelector('#theme-button');
-        var calculator = document.querySelector('calculator-element');
+        (function() {
+            var themeButton = document.querySelector('#theme-button');
+            var calculator = document.querySelector('calculator-element');
 
-        themeButton.addEventListener('click', function() {
-            var theme = calculator.getAttribute('theme');
-            if (theme == 'light') {
-                calculator.setAttribute('theme', 'dark');
-            } else {
-                calculator.setAttribute('theme', 'light');
-            }
-        });
+            themeButton.addEventListener('click', function() {
+                var theme = calculator.getAttribute('theme');
+                if (theme == 'light') {
+                    calculator.setAttribute('theme', 'dark');
+                } else {
+                    calculator.setAttribute('theme', 'light');
+                }
+            });
+        })();
     </script>
 </html>
