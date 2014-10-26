@@ -11,9 +11,42 @@
                 font-family: 'Open Sans', sans-serif;
                 background-color: #E5E5E5;
             }
+            #theme-button {
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                border-radius: 0px;
+                border: none;
+                background: #272F35;
+                color: #ffffff;
+                font-size: 20px;
+                text-decoration: none;
+                width: 100px;
+                height: 40px;
+            }
+            calculator-element[theme="dark"] {
+                background-color: #272F35;
+            }
+            calculator-element[theme="dark"] button {
+                background: #272F35;
+            }
         </style>
     </head>
     <body unresolved>
+        <button id="theme-button">theme</button>
         <calculator-element></calculator-element>
     </body>
+
+    <script>
+        var themeButton = document.querySelector('#theme-button');
+        var calculator = document.querySelector('calculator-element');
+
+        themeButton.addEventListener('click', function() {
+            var theme = calculator.getAttribute('theme');
+            if (theme == 'light') {
+                calculator.setAttribute('theme', 'dark');
+            } else {
+                calculator.setAttribute('theme', 'light');
+            }
+        });
+    </script>
 </html>

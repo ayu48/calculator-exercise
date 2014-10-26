@@ -1,4 +1,5 @@
-Polymer({
+Polymer('calculator-element', {
+
     decimalAdded: false,
     operator: null,
     value1: 0,
@@ -35,6 +36,7 @@ Polymer({
         this.operator = event.currentTarget.value;
         this.decimalAdded = false;
 
+        //calculate square root right after operator pressed
         if (this.operator == 'square-root') {
             this.calculate();
         } else {

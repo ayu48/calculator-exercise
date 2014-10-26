@@ -1,6 +1,6 @@
 :host {
     display: block;
-    background-color: #272F35;
+    background-color: #1E75BB;
     position: relative;
     margin-top: 20px;
     margin-left: auto;
@@ -32,7 +32,7 @@ button {
     -moz-border-radius: 0;
     border-radius: 0px;
     border: none;
-    background: #EDAB00;
+    background: #50C1FF;
     color: #ffffff;
     font-size: 20px;
     text-decoration: none;
