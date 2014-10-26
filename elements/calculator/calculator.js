@@ -24,7 +24,14 @@ Polymer({
     },
 
     operatorClick: function(event) {
-        this.value1 = parseFloat(this.$.output.innerHTML);
+        // if more than one calculations are done before equal is pressed
+        // calculate what you have so far
+        if (this.value1 && this.operator) {
+            this.value1 = this.calculate(this.value1, parseFloat(this.$.output.innerHTML), this.operator);
+        } else {
+            this.value1 = parseFloat(this.$.output.innerHTML);
+        }
+
         this.operator = event.currentTarget.value;
         this.decimalAdded = false;
 
@@ -66,6 +73,7 @@ Polymer({
     emptyValues: function() {
         this.value1 = 0;
         this.value2 = 0;
+        this.operator = null;
     },
 
     updateOutput: function(value) {
